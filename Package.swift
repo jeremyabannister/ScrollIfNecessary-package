@@ -1,23 +1,29 @@
 // swift-tools-version: 5.10
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
+///
 import PackageDescription
 
+
+///
 let package = Package(
     name: "ScrollIfNecessary-package",
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "ScrollIfNecessary-package",
-            targets: ["ScrollIfNecessary-package"]),
+            name: "ScrollIfNecessary-module",
+            targets: ["ScrollIfNecessary-module"]
+        ),
     ],
+    dependencies: [],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ScrollIfNecessary-package"),
+            name: "ScrollIfNecessary-module",
+            dependencies: []
+        ),
         .testTarget(
-            name: "ScrollIfNecessary-packageTests",
-            dependencies: ["ScrollIfNecessary-package"]),
+            name: "ScrollIfNecessary-module-tests",
+            dependencies: [
+                "ScrollIfNecessary-module",
+            ]
+        ),
     ]
 )
